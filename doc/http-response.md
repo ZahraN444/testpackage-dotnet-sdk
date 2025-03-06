@@ -1,5 +1,5 @@
 
-# HttpResponse Class
+# HttpResponse
 
 HttpResponse stores necessary information about the http response.
 

@@ -1,22 +1,20 @@
 
-# Getting Started with Swagger Petstore
+# Getting Started with APIMATIC Calculator
 
 ## Introduction
 
-This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.
-
-Find out more about Swagger: [http://swagger.io](http://swagger.io)
+Simple calculator API hosted on APIMATIC
 
 ## Install the Package
 
 If you are building with .NET CLI tools then you can also use the following command:
 
 ```bash
-dotnet add package TestpackageSDK --version 1.2.3
+dotnet add package TestpackageSDK --version 1.2.2
 ```
 
 You can also view the package at:
-https://www.nuget.org/packages/TestpackageSDK/1.2.3
+https://www.nuget.org/packages/TestpackageSDK/1.2.2
 
 ## Test the SDK
 
@@ -24,85 +22,41 @@ The generated SDK also contain one or more Tests, which are contained in the Tes
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `TestHeader` | `string` | This is a test header<br>*Default*: `"TestHeaderDefaultValue"` |
 | `Environment` | `Environment` | The API environment. <br> **Default: `Environment.Production`** |
 | `Timeout` | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
-| `ApiKeyCredentials` | [`ApiKeyCredentials`](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
-| `HttpBasicCredentials` | [`HttpBasicCredentials`](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/auth/basic-authentication.md) | The Credentials Setter for Basic Authentication |
-| `PetstoreAuthCredentials` | [`PetstoreAuthCredentials`](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/auth/oauth-2-implicit-grant.md) | The Credentials Setter for OAuth 2 Implicit Grant |
 
 The API client can be initialized as follows:
 
 ```csharp
-SwaggerPetstoreClient client = new SwaggerPetstoreClient.Builder()
-    .ApiKeyCredentials(
-        new ApiKeyModel.Builder(
-            "api_key"
-        )
-        .Build())
-    .HttpBasicCredentials(
-        new HttpBasicModel.Builder(
-            "username",
-            "passwprd"
-        )
-        .Build())
-    .PetstoreAuthCredentials(
-        new PetstoreAuthModel.Builder(
-            "OAuthClientId",
-            "OAuthRedirectUri"
-        )
-        .OAuthScopes(
-            new List<OAuthScopePetstoreAuthEnum>
-            {
-                OAuthScopePetstoreAuthEnum.Readpets,
-                OAuthScopePetstoreAuthEnum.Writepets,
-            })
-        .Build())
-    .TestHeader("TestHeaderDefaultValue")
-    .Environment(SwaggerPetstore.Standard.Environment.Production)
+APIMATICCalculatorClient client = new APIMATICCalculatorClient.Builder()
+    .Environment(APIMATICCalculator.Standard.Environment.Production)
     .Build();
 ```
 
-## Environments
-
-The SDK can be configured to use a different environment for making API calls. Available environments are:
-
-### Fields
-
-| Name | Description |
-|  --- | --- |
-| production | **Default** |
-| environment2 | - |
-| environment3 | - |
-
-## Authorization
-
-This API uses the following authentication schemes.
-
-* [`api_key (Custom Header Signature)`](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/auth/custom-header-signature.md)
-* [`httpBasic (Basic Authentication)`](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/auth/basic-authentication.md)
-* [`petstore_auth (OAuth 2 Implicit Grant)`](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/auth/oauth-2-implicit-grant.md)
-
 ## List of APIs
 
-* [Pet](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/controllers/pet.md)
-* [Store](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/controllers/store.md)
-* [User](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/controllers/user.md)
+* [Simple Calculator](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/controllers/simple-calculator.md)
 
-## Classes Documentation
+## Additional Documentation
 
-* [Utility Classes](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/utility-classes.md)
-* [HttpRequest](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/http-request.md)
-* [HttpResponse](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/http-response.md)
-* [HttpStringResponse](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/http-string-response.md)
-* [HttpContext](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/http-context.md)
-* [HttpClientConfiguration](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/http-client-configuration.md)
-* [HttpClientConfiguration Builder](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/http-client-configuration-builder.md)
-* [ApiException](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.3/doc/api-exception.md)
+### Wrappers
+
+* [HttpRequest](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-request.md)
+* [HttpResponse](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-response.md)
+* [HttpStringResponse](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-string-response.md)
+* [HttpContext](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-context.md)
+* [HttpClientConfiguration](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-client-configuration.md)
+* [HttpClientConfigurationBuilder](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-client-configuration-builder.md)
+* [ApiException](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/api-exception.md)
+
+### Utilities
+
+* [ApiHelper](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/api-helper.md)
+* [HttpCallback](https://www.github.com/ZahraN444/testpackage-dotnet-sdk/tree/1.2.2/doc/http-callback.md)
 

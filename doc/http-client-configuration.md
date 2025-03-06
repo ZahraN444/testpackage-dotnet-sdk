@@ -1,5 +1,5 @@
 
-# HttpClientConfiguration Class
+# HttpClientConfiguration
 
 HttpClientConfiguration represents the current state of the Http Client.
 
@@ -21,5 +21,5 @@ HttpClientConfiguration represents the current state of the Http Client.
 
 | Name | Description | Return Type |
 |  --- | --- | --- |
-| `ToBuilder()` | Creates an object of the HttpClientConfiguration using the values provided for the builder. | [`Builder`](http-client-configuration-builder.md) |
+| `ToBuilder()` | Creates an object of the HttpClientConfiguration using the values provided for the builder. | [`Builder`](../doc/http-client-configuration-builder.md) |
 

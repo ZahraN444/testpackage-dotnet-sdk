@@ -1,15 +1,20 @@
 
-# HttpRequest Class
+# HttpRequest
 
-HttpResponse stores necessary information about the http response.
+HttpRequest stores necessary information about the http request.
 
 ## Properties
 
 | Name | Description | Type |
 |  --- | --- | --- |
-| StatusCode | Gets the HTTP Status code of the http response. | `int` |
-| Headers | Gets the headers of the http response. | `Dictionary<string, string>` |
-| RawBody | Gets the stream of the body. | `Stream` |
+| HttpMethod | The HTTP verb to use for this request. | `HttpMethod` |
+| QueryUrl | The query url for the http request. | `string` |
+| QueryParameters | Query parameters collection for the current http request. | `Dictionary<string, object>` |
+| Headers | Headers collection for the current http request. | `Dictionary<string, string>` |
+| FormParameters | Form parameters for the current http request. | `List<KeyValuePair<string, object>>` |
+| Body | Optional raw string to send as request body. | `object` |
+| Username | Optional username for Basic Auth. | `string` |
+| Password | Optional password for Basic Auth. | `string` |
 
 ## Constructors
 
@@ -25,5 +30,5 @@ HttpResponse stores necessary information about the http response.
 | Name | Description | Return Type |
 |  --- | --- | --- |
 | `AddHeaders(Dictionary<string, string> HeadersToAdd)` | Concatenate values from a Dictionary to this object. | `Dictionary<string, string>` |
-| `AddQueryParameters(Dictionary<string, object> queryParamaters)` | Concatenate values from a Dictionary to query parameters dictionary. | `void` |
+| `AddQueryParameters(Dictionary<string, object> queryParameters)` | Concatenate values from a Dictionary to query parameters dictionary. | `void` |
 

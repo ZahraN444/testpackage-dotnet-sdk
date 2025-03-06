@@ -1,5 +1,5 @@
 
-# HttpStringResponse Class
+# HttpStringResponse
 
 HttpStringResponse inherits from HttpResponse and has additional property of string body.
 
